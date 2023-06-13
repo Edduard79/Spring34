@@ -28,7 +28,7 @@ public class Config {
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(authorize->authorize
+                .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/users").hasAnyRole("ADMIN")
                         .requestMatchers("/users/{id}").hasAnyRole("ADMIN", "USER")
                         .anyRequest()

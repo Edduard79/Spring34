@@ -60,8 +60,8 @@ public class UserService implements UserDetailsService {
     }
 
     public User findById(Long id) {
-        Optional<User> userToFind =  userRepo.findById(id);
-        if(userToFind.isPresent()){
+        Optional<User> userToFind = userRepo.findById(id);
+        if (userToFind.isPresent()) {
             return userToFind.get();
         }
         throw new EntityNotFoundException("Not found");
